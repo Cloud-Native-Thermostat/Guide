@@ -36,20 +36,20 @@ In order to prevent situation when Raspberry Pi will get different IP on each bo
    - [ ] Update `ntp_servers` might be some public ntp server or if your router provide own use that one
 2. Run master image build, please note that it take some time to fetch dependencies so go take coffee or stare at something ⏳.
 
-     docker run -e TARGET=raspberrypi -v $PWD/config:/app/config -v $PWD/deps:/app/deps -v $PWD/out:/app/out -v /dev:/dev --privileged docker.io/elmariofredo/picl-k3os-image-generator:v0.2
+       docker run -e TARGET=raspberrypi -v $PWD/config:/app/config -v $PWD/deps:/app/deps -v $PWD/out:/app/out -v /dev:/dev --privileged docker.io/elmariofredo/picl-k3os-image-generator:v0.2
 
 3. Burn resulting image generated to [out](./out) folder to MicroSDHC using Raspberry Pi Imager and put it into your Rapberry Pi marked as 1.
 
 4. Get kubeconfig file and verify that master is up and running
 
-     ssh rancher@MASTER_1_IP sudo cat /etc/rancher/k3s/k3s.yaml | sed 's/127.0.0.1/MASTER_1_IP/g' >! ~/.kube/config
-     export KUBECONFIG=~/.kube/config
-     kubectl get nodes
-     #> n1     Ready    master   20s   v1.18.6+k3s1
+       ssh rancher@MASTER_1_IP sudo cat /etc/rancher/k3s/k3s.yaml | sed 's/127.0.0.1/MASTER_1_IP/g' >! ~/.kube/config
+       export KUBECONFIG=~/.kube/config
+       kubectl get nodes
+       #> n1     Ready    master   20s   v1.18.6+k3s1
 
 5. Get join token from master node
 
-     ssh rancher@MASTER_1_IP sudo cat /var/lib/rancher/k3s/server/node-token
+       ssh rancher@MASTER_1_IP sudo cat /var/lib/rancher/k3s/server/node-token
 
 ## 2. Build worker image
 
@@ -57,7 +57,7 @@ In order to prevent situation when Raspberry Pi will get different IP on each bo
 2. Update `token` under [config](./config) folder for each worker
 3. Build image using same command
     
-    docker run -e TARGET=raspberrypi -v $PWD/config:/app/config -v $PWD/deps:/app/deps -v $PWD/out:/app/out -v /dev:/dev --privileged docker.io/elmariofredo/picl-k3os-image-generator:v0.2
+       docker run -e TARGET=raspberrypi -v $PWD/config:/app/config -v $PWD/deps:/app/deps -v $PWD/out:/app/out -v /dev:/dev --privileged docker.io/elmariofredo/picl-k3os-image-generator:v0.2
 
 4. Burn image to rest MicroSDHC using Raspberry Pi Imager and put it into rest of Raspberry Pi.
 5. Verify that workers have joined master properly by running `kubectl get nodes` again

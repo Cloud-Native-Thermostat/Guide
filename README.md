@@ -8,7 +8,7 @@ Because I hated our bathroom floor heating thermostat and wanted something bette
 
 ## Why Cloud Native? Isn't it bit overhead?
 
-Maybe 😉, running K8s cluster to power simple cron job for triggering heating on and off may seem like overhead 🥴. But in the another way running so critical application like home heating on some single Raspberry Pi using undocumented scripts, is not good recipe for happy family life. Most importantly Kubernetes is my daily bread and I wanted home project, where I can try new technologies and approaches.
+Running K8s cluster to power simple cron job for triggering heating on and off may seem like overhead 🥴. But in the another way running such a critical application like home heating on some single Raspberry Pi using undocumented scripts, is not good recipe for happy family life 💥. Most importantly Kubernetes is my daily bread and I wanted home project, where I can try new technologies and approaches 🕴.
 
 ## What
 

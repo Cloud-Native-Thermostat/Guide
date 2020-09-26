@@ -1,2 +1,5 @@
 manifests
 tmp
+_site
+.jekyll-cache
+.jekyll-metadata

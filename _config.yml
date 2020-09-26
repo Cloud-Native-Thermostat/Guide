@@ -5,6 +5,14 @@ is_project_page: false
 google_analytics:
 theme: noir-for-jekyll
 logo: thermometer.png
+
+defaults:
+  - 
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+
 # github_link: "https://github.com/Cloud-Native-Thermostat/Guide"
 # blog_link: "https://cloud-native-thermostat.github.io/Guide/"
 # website_link: "https://cloud-native-thermostat.github.io/Guide/"
@@ -16,3 +24,8 @@ plugins:
 - jekyll-seo-tag
 - jekyll-target-blank
 - jekyll-readme-index
+
+readme_index:
+  enabled:          true
+  remove_originals: false
+  with_frontmatter: true

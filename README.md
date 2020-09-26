@@ -8,7 +8,19 @@ Because I hated our bathroom floor heating thermostat and wanted something bette
 
 ## Why Cloud Native? Isn't it bit overhead?
 
-Maybe 😉, running K8s cluster to power simple cron job for triggering heating on and off may seem like overhead 🥴. But in the another way running so critical application like home heating on some single Raspberry Pi using undocumented scripts, is not good recipe for working marriage 🤣. Most importantly Kubernetes is my daily bread and I wanted home project where I can try new technologies and approaches.
+Maybe 😉, running K8s cluster to power simple cron job for triggering heating on and off may seem like overhead 🥴. But in the another way running so critical application like home heating on some single Raspberry Pi using undocumented scripts, is not good recipe for happy family life. Most importantly Kubernetes is my daily bread and I wanted home project, where I can try new technologies and approaches.
+
+## What
+
+- Manager nodes [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) 4GB
+- OS [K3OS](https://github.com/rancher/k3os) build using [picl-k3os-image-generator](https://github.com/elmariofredo/picl-k3os-image-generator)
+- Scheduler [K3s](https://github.com/rancher/k3s)
+- Loadbalancer [Metallb](Sources/metallb-system)
+- Ingress [NGINX Ingress Controller](Sources/ingress-nginx)
+- Monitoring 
+  - [Grafana](Sources/monitoring-system/grafana)
+  - [Node exporter](Sources/monitoring-system/node-exporter)
+  - [VictoriaMetrics Operator](Sources/monitoring-system/victoriametrics)
 
 ## How does it work?
 
@@ -19,6 +31,6 @@ TODO
 Fork and clone this repo https://github.com/elmariofredo/cnt and follow this guide divided into several steps.
 
 1. [Install cluster](./Guide/1-Install%20cluster.md)
-2. [Install base services]() TODO
+2. [Install base services](./Guide/2-Install%20services.md)
 3. [Install thermostat services]() TODO
 4. [Build thermostat]() TODO

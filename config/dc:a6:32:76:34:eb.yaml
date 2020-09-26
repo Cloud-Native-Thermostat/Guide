@@ -9,3 +9,7 @@ k3os:
   - agent
   token: K9e4255df5cb259e4255df26204f0250d6fec0ce8f29b0627c6f59f5cb259e4255::server:d78af32afab244a848bca151a256ec9b
   server_url: https://MASTER_1_IP:6443
+boot_cmd:
+- "ln -vs /usr/share/zoneinfo/Europe/Prague /etc/localtime"
+- "echo 'Europe/Prague' > /etc/timezone"
+

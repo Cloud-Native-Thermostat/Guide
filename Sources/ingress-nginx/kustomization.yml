@@ -1,0 +1,18 @@
+# https://github.com/kubernetes/ingress-nginx/tree/master/deploy/static/provider/cloud
+resources:
+- https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.34.1/deploy/static/provider/cloud/deploy.yaml
+
+patchesJson6902:
+- target:
+    version: v1
+    kind: Service
+    name: ingress-nginx-controller
+    namespace: ingress-nginx
+  patch: |-
+    - op: add
+      path: "/metadata/annotations"
+      value:
+        metallb.universe.tf/address-pool: ingress
+    - op: add
+      path: "/spec/loadBalancerIP"
+      value: 10.236.127.155

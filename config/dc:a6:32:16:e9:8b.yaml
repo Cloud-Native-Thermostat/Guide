@@ -8,3 +8,6 @@ k3os:
   k3s_args:
   - server
   - "--disable=servicelb,traefik"
+boot_cmd:
+- "ln -vs /usr/share/zoneinfo/Europe/Prague /etc/localtime"
+- "echo 'Europe/Prague' > /etc/timezone"

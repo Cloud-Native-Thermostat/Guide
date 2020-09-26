@@ -1,0 +1,18 @@
+# https://github.com/jetstack/cert-manager/releases
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: cert-manager
+
+resources:
+- https://github.com/jetstack/cert-manager/releases/download/v1.0.2/cert-manager.yaml
+- issuer.yml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+secretGenerator:
+- name: digitalocean-dns
+  envs: 
+  - ../../tmp/dnstoken
+

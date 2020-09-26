@@ -1,0 +1,5 @@
+address-pools:
+- name: ingress
+  protocol: layer2
+  addresses:
+  - 10.236.127.155/32

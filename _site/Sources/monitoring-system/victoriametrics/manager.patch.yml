@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    control-plane: vm-operator
+  name: vm-operator
+  namespace: monitoring-system
+spec:
+  template:
+    spec:
+      containers:
+      - name: manager
+        env:
+        - name: VM_VMAGENTDEFAULT_CONFIGRELOADIMAGE
+          value: quay.io/coreos/prometheus-config-reloader:v0.42.0

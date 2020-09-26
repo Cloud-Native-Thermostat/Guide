@@ -1,0 +1,26 @@
+<h1 id="install-services">Install services</h1>
+
+<p>All services are setup using <a href="https://github.com/kubernetes-sigs/kustomize" target="_blank" rel="noopener noreferrer">Kustomize</a> defined in <a href="../Sources">Sources</a> folder.</p>
+
+<h2 id="deploy">Deploy</h2>
+
+<ol>
+  <li>Update values in
+    <ol>
+      <li>Change domain in <a href="../Sources/monitoring-system/grafana/grafana-chart-values.yml">grafana-chart-values.yml</a>
+</li>
+      <li>Add digitalocean.com DNS token to <a href="../tmp/dnstoken">../tmp/dnstoken</a>
+  access-token=YOUR_TOKEN
+If you use different DNS provider change <a href="../Sources/cert-manager/issuer.yml">issuer.yml</a> see docs for more informations https://cert-manager.io/docs/configuration/acme/dns01/</li>
+      <li>Change loadbalancer IP in <a href="../Sources/metallb-system/configs/config">metallb</a> and then also in ingress <a href="../Sources/ingress-nginx/kustomization.yml">controller</a>
+</li>
+      <li>Change email in <a href="../Sources/cert-manager/issuer.yml">cert-manager</a>
+</li>
+    </ol>
+  </li>
+  <li>Run <a href="../manifests.sh">manifests.sh</a> file. In case that you will run into CRD nonexistent error run command again.</li>
+</ol>
+
+<h2 id="verify">Verify</h2>
+
+<p>Log into your grafana dashboard using <a href="../tmp/adminpass">adminpass</a> credentials. After login you should see ‘Pi k3s Simple Dashboard’, look around there are few other dashboard preinstalled for you 😉.</p>

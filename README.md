@@ -1,3 +1,5 @@
+---
+---
 # Cloud Native Thermostat
 
 This is step by step guide on how to build and maintain cloud native thermostat using Raspberry Pi, K3s on K3os and cheap ESP8266 microchip.
@@ -15,12 +17,12 @@ Running K8s cluster to power simple cron job for triggering heating on and off m
 - Manager nodes [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) 4GB
 - OS [K3OS](https://github.com/rancher/k3os) build using [picl-k3os-image-generator](https://github.com/elmariofredo/picl-k3os-image-generator)
 - Scheduler [K3s](https://github.com/rancher/k3s)
-- Loadbalancer [Metallb](Sources/metallb-system)
-- Ingress [NGINX Ingress Controller](Sources/ingress-nginx)
+- Loadbalancer [Metallb](./Sources/metallb-system)
+- Ingress [NGINX Ingress Controller](./Sources/ingress-nginx)
 - Monitoring 
-  - [Grafana](Sources/monitoring-system/grafana)
-  - [Node exporter](Sources/monitoring-system/node-exporter)
-  - [VictoriaMetrics Operator](Sources/monitoring-system/victoriametrics)
+  - [Grafana](./Sources/monitoring-system/grafana)
+  - [Node exporter](./Sources/monitoring-system/node-exporter)
+  - [VictoriaMetrics Operator](./Sources/monitoring-system/victoriametrics)
 
 ## How does it work?
 
@@ -32,5 +34,5 @@ Fork and clone this repo https://github.com/elmariofredo/cnt and follow this gui
 
 1. [Install cluster](./Guide/1-Install%20cluster.md)
 2. [Install base services](./Guide/2-Install%20services.md)
-3. [Install thermostat services]() TODO
-4. [Build thermostat]() TODO
+3. [Install thermostat services](./) TODO
+4. [Build thermostat](./) TODO

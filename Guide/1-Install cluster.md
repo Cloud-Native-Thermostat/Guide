@@ -1,3 +1,5 @@
+---
+---
 # Install cluster
 
 In this part we will setup Kubernetes cluster using [K3os](https://github.com/rancher/k3os) which is operating system containing [K3s](https://github.com/rancher/k3s) which is minimalised and bit simplified Kubernetes flavour. This meas that after finishing this part you will get fully functional cluster with minimum resource consumption.

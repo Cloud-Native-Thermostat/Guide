@@ -1,9 +1,0 @@
-# https://github.com/prometheus-community/helm-charts/tree/main/charts/prometheus-node-exporter
-apiVersion: helm.kustomize.mgoltzsche.github.com/v1
-kind: ChartRenderer
-metadata:
-  name: node-exporter
-  namespace: monitoring-system
-repository: https://prometheus-community.github.io/helm-charts
-chart: prometheus-node-exporter
-version: 1.11.2

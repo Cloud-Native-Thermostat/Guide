@@ -1,0 +1,10 @@
+title: Cloud Native Thermostat Guide
+description: Living documentation of home made thermostat
+show_downloads: false
+is_project_page: false
+google_analytics:
+theme: jekyll-theme-cayman
+logo: thermometer.png
+github_link: "https://github.com/Cloud-Native-Thermostat/Guide"
+blog_link: "https://cloud-native-thermostat.github.io/Guide/"
+website_link: "https://cloud-native-thermostat.github.io/Guide/"

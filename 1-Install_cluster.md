@@ -1,7 +1,4 @@
----
----
 # Install cluster
-
 
 In this part we will setup Kubernetes cluster using [K3os](https://github.com/rancher/k3os) which is operating system containing [K3s](https://github.com/rancher/k3s) which is minimalised and bit simplified Kubernetes flavour. This meas that after finishing this part you will get fully functional cluster with minimum resource consumption.
 
@@ -33,7 +30,7 @@ In order to prevent situation when Raspberry Pi will get different IP on each bo
 
 ## 2. Build master image
 
-1. Under this guide find [./config](./config) folder and apply following changes:
+1. Under this guide find [./config](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/config) folder and apply following changes:
    - 👉 Change file names to your MAC addresses you have noted in previous step. Keep order, each config file contain comment to note which Rasperry Pi node number is it.
    - 👉 Set your own ssh public key under `ssh_authorized_keys` ( NOTE: github shortcut notation didn't work for me ).
    - 👉 Update `ntp_servers` might be some public ntp server or if your router provide own use that one.
@@ -42,7 +39,7 @@ In order to prevent situation when Raspberry Pi will get different IP on each bo
 
        docker run -e TARGET=raspberrypi -v $PWD/config:/app/config -v $PWD/deps:/app/deps -v $PWD/out:/app/out -v /dev:/dev --privileged docker.io/elmariofredo/picl-k3os-image-generator:v0.2
 
-3. Burn resulting image generated to [out](./out) folder to MicroSDHC using Raspberry Pi Imager and put it into your Rapberry Pi marked as 1.
+3. Burn resulting image generated to `./out` folder to MicroSDHC using Raspberry Pi Imager and put it into your Rapberry Pi marked as 1.
 
 4. Get kubeconfig file and verify that master is up and running
 
@@ -57,8 +54,8 @@ In order to prevent situation when Raspberry Pi will get different IP on each bo
 
 ## 2. Build worker image
 
-1. Update `server_url` under [config](./config) folder for each worker
-2. Update `token` under [config](./config) folder for each worker
+1. Update `server_url` under [config](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/config) folder for each worker
+2. Update `token` under [config](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/config) folder for each worker
 3. Build image using same command
 
        docker run -e TARGET=raspberrypi -v $PWD/config:/app/config -v $PWD/deps:/app/deps -v $PWD/out:/app/out -v /dev:/dev --privileged docker.io/elmariofredo/picl-k3os-image-generator:v0.2

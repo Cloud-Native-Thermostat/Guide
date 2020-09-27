@@ -38,4 +38,3 @@ Fork and clone this repo https://github.com/Cloud-Native-Thermostat/Guide and fo
 4. [Build thermostat HW 🚧](4-Build_thermostat_HW.md)
 
 Feel free to update your fork with your specific setup.
-

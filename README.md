@@ -30,7 +30,7 @@ TODO
 
 ## How to start?
 
-Fork and clone this repo https://github.com/Cloud-Native-Thermostat/Guide and follow this guide divided into following [steps](navigation.md):
+Fork and clone this repo https://github.com/Cloud-Native-Thermostat/Guide and follow this guide divided into following steps:
 
 1. [Install cluster](1-Install_cluster.md)
 2. [Install services](2-Install_services.md)
@@ -38,3 +38,8 @@ Fork and clone this repo https://github.com/Cloud-Native-Thermostat/Guide and fo
 4. [Build thermostat HW 🚧](4-Build_thermostat_HW.md)
 
 Feel free to update your fork with your specific setup.
+
+<!-- include -->
+[](_coverpage.md)
+[](_sidebar_.md)
+<!-- include -->

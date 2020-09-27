@@ -2,7 +2,7 @@
 ---
 # Install services
 
-All services are setup using [Kustomize](https://github.com/kubernetes-sigs/kustomize) defined in [Sources](../Sources) folder.
+All services are setup using [Kustomize](https://github.com/kubernetes-sigs/kustomize) defined in [Sources](../Sources) folder. Go ahead and browse this folder to get familiar what is going to be installed on your cluster.
 
 ## Deploy
 

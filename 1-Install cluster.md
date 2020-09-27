@@ -2,11 +2,12 @@
 ---
 # Install cluster
 
+
 In this part we will setup Kubernetes cluster using [K3os](https://github.com/rancher/k3os) which is operating system containing [K3s](https://github.com/rancher/k3s) which is minimalised and bit simplified Kubernetes flavour. This meas that after finishing this part you will get fully functional cluster with minimum resource consumption.
 
 ## Notes
 
-I have spend quite some time on this part for several reasons. I wanted Raspberry Pi to run 64-bit operating system which is tricky, because offical Raspberry OS was not available at the time I started and even now is not stable release and even then you have to setup all. K3os was obvious choice but it doesn't have straightforward installation for Raspberry Pi. Thanks to [sgielen](https://github.com/sgielen) who created [Raspberry Pi image generator](https://github.com/sgielen/picl-k3os-image-generator). I have used this generator and update it to latest version of [Raspeberry Pi](https://github.com/raspberrypi/firmware/releases) and [K3os](https://github.com/rancher/k3os).
+I have spend quite some time on this part for several reasons. I wanted Raspberry Pi to run 64-bit operating system which is tricky, because offical Raspberry OS was not available at the time. K3os was obvious choice but it doesn't have straightforward installation for Raspberry Pi. Thanks to [sgielen](https://github.com/sgielen) who created [Raspberry Pi image generator](https://github.com/sgielen/picl-k3os-image-generator). I have used this generator and update it to latest version of [Raspeberry Pi](https://github.com/raspberrypi/firmware/releases) and [K3os](https://github.com/rancher/k3os).
 
 ## Prerequisites
 
@@ -33,10 +34,10 @@ In order to prevent situation when Raspberry Pi will get different IP on each bo
 ## 2. Build master image
 
 1. Under this guide find [./config](./config) folder and apply following changes:
-   - [ ] Change file names to your MAC addresses you have noted in previous step. Keep order, each config file contain comment to note which Rasperry Pi node number is it.
-   - [ ] Set your own ssh public key under `ssh_authorized_keys` ( NOTE: github shortcut notation didn't work for me ).
-   - [ ] Update `ntp_servers` might be some public ntp server or if your router provide own use that one.
-   - [ ] Update `boot_cmd` to reflect your zone.
+   - 👉 Change file names to your MAC addresses you have noted in previous step. Keep order, each config file contain comment to note which Rasperry Pi node number is it.
+   - 👉 Set your own ssh public key under `ssh_authorized_keys` ( NOTE: github shortcut notation didn't work for me ).
+   - 👉 Update `ntp_servers` might be some public ntp server or if your router provide own use that one.
+   - 👉 Update `boot_cmd` to reflect your zone.
 2. Run master image build, please note that it take some time to fetch dependencies so go take coffee or stare at something ⏳.
 
        docker run -e TARGET=raspberrypi -v $PWD/config:/app/config -v $PWD/deps:/app/deps -v $PWD/out:/app/out -v /dev:/dev --privileged docker.io/elmariofredo/picl-k3os-image-generator:v0.2
@@ -45,10 +46,10 @@ In order to prevent situation when Raspberry Pi will get different IP on each bo
 
 4. Get kubeconfig file and verify that master is up and running
 
-     ssh rancher@MASTER_1_IP sudo cat /etc/rancher/k3s/k3s.yaml | sed 's/127.0.0.1/MASTER_1_IP/g' > ./tmp/kube_config.yml
-     export KUBECONFIG=./tmp/kube_config.yml
-     kubectl get nodes
-     #> n1     Ready    master   20s   v1.18.6+k3s1
+       ssh rancher@MASTER_1_IP sudo cat /etc/rancher/k3s/k3s.yaml | sed 's/127.0.0.1/MASTER_1_IP/g' > ./tmp/kube_config.yml
+       export KUBECONFIG=./tmp/kube_config.yml
+       kubectl get nodes
+       #> n1     Ready    master   20s   v1.18.6+k3s1
 
 5. Get join token from master node
 

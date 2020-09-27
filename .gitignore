@@ -1,2 +1,5 @@
 manifests
 tmp
+.jekyll-cache
+.jekyll-metadata
+vendor

@@ -1,6 +1,4 @@
-# Cloud Native Thermostat
-
-[Quick start](navigation.md)  
+# Cloud Native Thermostat 
 
 This is step by step guide on how to build and maintain cloud native thermostat using Raspberry Pi, K3s on K3os and cheap ESP8266 microchip.
 
@@ -32,7 +30,7 @@ TODO
 
 ## How to start?
 
-Fork and clone this repo https://github.com/Cloud-Native-Thermostat/Guide and follow this guide divided into following steps:
+Fork and clone this repo https://github.com/Cloud-Native-Thermostat/Guide and follow this guide divided into following [steps](navigation.md):
 
 1. [Install cluster](1-Install_cluster.md)
 2. [Install services](2-Install_services.md)

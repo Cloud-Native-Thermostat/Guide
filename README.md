@@ -39,7 +39,3 @@ Fork and clone this repo https://github.com/Cloud-Native-Thermostat/Guide and fo
 
 Feel free to update your fork with your specific setup.
 
-<!-- include -->
-[Coverpage](_coverpage.md)
-[Sidebar](_sidebar.md)
-<!-- include -->

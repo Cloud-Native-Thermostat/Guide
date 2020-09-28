@@ -14,7 +14,7 @@ fi
 echo "Cleanup manifests folder"
 rm -rf  manifests && mkdir manifests
 
-manifests="cert-manager ingress-nginx metallb-system monitoring-system"
+manifests="cert-manager ingress-nginx metallb-system monitoring-system rabbitmq-operator"
 
 for service_namespace in ${manifests}
 do

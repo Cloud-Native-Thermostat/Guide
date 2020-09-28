@@ -12,17 +12,22 @@ Because I hated our bathroom floor heating thermostat and wanted something bette
 
 Running K8s cluster to power simple cron job for triggering heating on and off may seem like overhead. But in the another way running such a critical application like home heating on some single Raspberry Pi using undocumented scripts, is not good recipe for happy family life 💥. Most importantly Kubernetes is my daily bread and I wanted home project, where I can try new technologies and approaches 🕴
 
-## What?
+## What❓
 
-- Manager nodes [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) 4GB
-- OS [K3OS](https://github.com/rancher/k3os) build using [picl-k3os-image-generator](https://github.com/elmariofredo/picl-k3os-image-generator)
-- Scheduler [K3s](https://github.com/rancher/k3s)
-- Loadbalancer [Metallb](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/Sources/metallb-system)
-- Ingress [NGINX Ingress Controller](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/Sources/ingress-nginx)
-- Monitoring 
-  - [Grafana](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/Sources/monitoring-system/grafana)
-  - [Node exporter](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/Sources/monitoring-system/node-exporter)
-  - [VictoriaMetrics Operator](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/Sources/monitoring-system/victoriametrics)
+- Control plane
+  - HW [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) 4GB
+  - OS [K3OS](https://github.com/rancher/k3os) build using [picl-k3os-image-generator](https://github.com/elmariofredo/picl-k3os-image-generator)
+  - Scheduler [K3s](https://github.com/rancher/k3s)
+  - Loadbalancer [Metallb](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/Sources/metallb-system)
+  - Ingress [NGINX Ingress Controller](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/Sources/ingress-nginx)
+  - Monitoring 
+    - [Grafana](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/Sources/monitoring-system/grafana)
+    - [Node exporter](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/Sources/monitoring-system/node-exporter)
+    - [VictoriaMetrics Operator](https://github.com/Cloud-Native-Thermostat/Guide/blob/master/Sources/monitoring-system/victoriametrics)
+
+- IoT 
+  - HW [ESP8266](https://www.espressif.com/en/products/socs/esp8266)
+  - OS [NodeMcu](http://www.nodemcu.com/index_en.html)
 
 ## How does it work?
 

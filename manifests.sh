@@ -14,7 +14,7 @@ fi
 echo "Cleanup manifests folder"
 rm -rf  manifests && mkdir manifests
 
-manifests="cert-manager ingress-nginx metallb-system monitoring-system"
+manifests="cert-manager ingress-nginx metallb-system monitoring-system longhorn"
 
 for service_namespace in ${manifests}
 do
@@ -25,3 +25,9 @@ do
   docker run -it --rm -e KUBECONFIG=/workdir/tmp/kube_config.yml -v ${PWD}:/workdir bitnami/kubectl:1.18.8 apply --wait --record=false -f /workdir/manifests/${service_namespace}.yml
 done
 
+for cluster_node in $(docker run -it --rm -e KUBECONFIG=/workdir/tmp/kube_config.yml -v ${PWD}:/workdir bitnami/kubectl:1.18.8 get no -o name)
+do
+
+  docker run -it --rm -e KUBECONFIG=/workdir/tmp/kube_config.yml -v ${PWD}:/workdir bitnami/kubectl:1.18.8 label $(echo $cluster_node | tr -d '[:space:]') node.longhorn.io/create-default-disk=true --overwrite
+
+done

@@ -1,0 +1,31 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- https://raw.githubusercontent.com/longhorn/longhorn/master/deploy/longhorn.yaml
+- ingress.yaml
+namespace: longhorn
+images:
+- name: longhornio/longhorn-manager
+  newName: vsellier/longhorn-manager
+  newTag: v1.0.1
+- name: longhornio/longhorn-ui
+  newName: vsellier/longhorn-ui
+  newTag: v1.0.1
+patches:
+- path: patch_csi.yaml
+  target:
+    group: apps
+    version: v1
+    kind: Deployment
+    name: longhorn-driver-deployer
+- path: patch_daemonset.yaml
+  target:
+    group: apps
+    version: v1
+    kind: DaemonSet
+    name: longhorn-manager
+- path: patch-default-settings-configmap.yaml
+  target:
+    version: v1
+    kind: ConfigMap
+    name: longhorn-default-setting

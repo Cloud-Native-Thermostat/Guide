@@ -1,0 +1,12 @@
+---
+- op: replace
+  path: /spec/template/spec/containers/0/command/4
+  value: vsellier/longhorn-engine:v1.0.1
+
+- op: replace
+  path: /spec/template/spec/containers/0/command/6
+  value: vsellier/longhorn-instance-manager:v1_20200514_1
+
+- op: replace
+  path: /spec/template/spec/containers/0/command/8
+  value: vsellier/longhorn-manager:v1.0.1

@@ -1,0 +1,24 @@
+---
+- op: replace
+  path: /data/default-setting.yaml
+  value: |-
+    backup-target:
+    backup-target-credential-secret:
+    create-default-disk-labeled-nodes: true
+    default-data-path: /media/disk0
+    replica-soft-anti-affinity:
+    storage-over-provisioning-percentage:
+    storage-minimal-available-percentage:
+    upgrade-checker:
+    default-replica-count: 3
+    guaranteed-engine-cpu: 0.125
+    default-longhorn-static-storage-class:
+    backupstore-poll-interval:
+    taint-toleration:
+    priority-class:
+    registry-secret:
+    auto-salvage:
+    disable-scheduling-on-cordoned-node:
+    replica-zone-soft-anti-affinity:
+    volume-attachment-recovery-policy:
+    mkfs-ext4-parameters:

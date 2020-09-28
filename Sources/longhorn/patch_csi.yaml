@@ -1,0 +1,28 @@
+---
+- op: replace
+  path: /spec/template/spec/containers/0/command/4
+  value: vsellier/longhorn-manager:v1.0.1
+
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: CSI_ATTACHER_IMAGE
+    value: vsellier/csi-attacher:v2.0.0
+
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: CSI_PROVISIONER_IMAGE
+    value: vsellier/csi-provisioner:v1.4.0
+
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: CSI_NODE_DRIVER_REGISTRAR_IMAGE
+    value: vsellier/csi-node-driver-registrar:v1.2.0
+
+- op: add
+  path: /spec/template/spec/containers/0/env/-
+  value:
+    name: CSI_RESIZER_IMAGE
+    value: vsellier/csi-resizer:v0.3.0

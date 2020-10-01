@@ -1,0 +1,12 @@
+# https://github.com/VictoriaMetrics/operator/tree/master/config/default
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: rabbitmq
+
+resources:
+- configmap.yaml
+- namespace.yaml
+- rbac.yaml
+- services.yaml
+- statefulset.yaml
